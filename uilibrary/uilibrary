@@ -409,10 +409,10 @@ function Library:create(options)
 	end
 
 	options = self:set_defaults({
-		Name = "Mercury",
+		Name = "analdanhaso",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
-		Link = "https://github.com/deeeity/mercury-lib"
+		Link = "https://analdanhaso.cc/main"
 	}, options)
 
 	if getgenv and getgenv().MercuryUI then
@@ -635,7 +635,7 @@ function Library:create(options)
 		Position = UDim2.new(0, 5, 1, -6),
 		Size = UDim2.new(0.2, 0, 0, 10),
 		Font = Enum.Font.SourceSans,
-		Text = "Status | Idle",
+		Text = "",
 		Theme = {TextColor3 = "Tertiary"},
 		TextSize = 14,
 		TextXAlignment = Enum.TextXAlignment.Left
@@ -858,7 +858,7 @@ function Library:create(options)
 		Name = "UI Drag Speed",
 		Description = "How smooth the dragging looks.",
 		Max = 20,
-		Default = 14,
+		Default = 0,
 		Callback = function(value)
 			Library.DragSpeed = (20 - value)/100
 		end,
