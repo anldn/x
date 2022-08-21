@@ -1,0 +1,93 @@
+game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "[SYSTEM] Anticheat Succesfully Bypassed", Color = Color3.fromRGB( 255,0,0 ), Font = Enum.Font.Arial, FontSize = Enum.FontSize.Size24 } )
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/hexress/idk/main/uilib')))()
+
+local Window = OrionLib:MakeWindow({Name = "No-Scope Arcade", HidePremium = false, SaveConfig = true, ConfigFolder = "sexhub"})
+
+OrionLib:MakeNotification({
+	Name = "sex hub",
+	Content = "sex hub loaded",
+	Image = "rbxassetid://4483345998",
+	Time = 3
+})
+
+local Tab = Window:MakeTab({
+	Name = "Aimbot",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Aimbot"
+})
+
+Tab:AddButton({
+	Name = "Silent Aim (High Ban Risk)",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/special/Silent%20Aim.lua"))();
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Aimbot (Hold M2)",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/special/Aimbot.lua"))();
+  	end    
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Visuals",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab2:AddSection({
+	Name = "Visuals"
+})
+
+Tab2:AddButton({
+	Name = "Player ESP",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/special/Player%20ESP.lua"))();		
+  	end    
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "Miscellaneous",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab3:AddSection({
+	Name = "Miscellaneous"
+})
+
+Tab3:AddButton({
+	Name = "Fly (Press X For Toggle)",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/special/Fly.lua"))();
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Speedhack",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/special/Speed.lua"))();
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Airjump",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/special/Airjump.lua"))();   
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Noclip",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/special/Noclip.lua"))();
+  	end    
+})
+
+OrionLib:Init()
