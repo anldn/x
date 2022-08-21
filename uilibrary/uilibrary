@@ -635,6 +635,7 @@ function Library:create(options)
 		Position = UDim2.new(0, 5, 1, -6),
 		Size = UDim2.new(0.2, 0, 0, 10),
 		Font = Enum.Font.SourceSans,
+		Text = "Status | Idle",
 		Theme = {TextColor3 = "Tertiary"},
 		TextSize = 14,
 		TextXAlignment = Enum.TextXAlignment.Left
@@ -797,7 +798,7 @@ function Library:create(options)
 			end
 		end)
 	end
-	
+
 	local quickAccess = homePage:object("Frame", {
 		BackgroundTransparency = 1,
 		Size = UDim2.new(1, -20, 0, 180)
@@ -831,37 +832,6 @@ function Library:create(options)
 		homePage = homePage,
 		nilFolder = core:object("Folder"),
 	}, Library)
-
-	settingsTab:_theme_selector()
-
-	settingsTab:keybind{
-		Name = "Toggle Key",
-		Description = "Key to show/hide the UI.",
-		Keybind = Enum.KeyCode.Delete,
-		Callback = function()
-			self.Toggled = not self.Toggled
-			Library:show(self.Toggled)
-		end,
-	}
-
-	settingsTab:toggle{
-		Name = "Lock Dragging",
-		Description = "Makes sure you can't drag the UI outside of the window.",
-		StartingState = true,
-		Callback = function(state)
-			Library.LockDragging = state
-		end,
-	}
-
-	settingsTab:slider{
-		Name = "UI Drag Speed",
-		Description = "How smooth the dragging looks.",
-		Max = 20,
-		Default = 0,
-		Callback = function(value)
-			Library.DragSpeed = (20 - value)/100
-		end,
-	}
 
 function Library:notification(options)
 	options = self:set_defaults({
