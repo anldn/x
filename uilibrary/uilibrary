@@ -799,15 +799,6 @@ function Library:create(options)
 		end)
 	end
 
-	local settingsTabIcon = profile:object("ImageButton", {
-		BackgroundTransparency = 1,
-		Theme = {ImageColor3 = "WeakText"},
-		Size = UDim2.fromOffset(24, 24),
-		Position = UDim2.new(1, -10, 1, -10),
-		AnchorPoint = Vector2.new(1, 1),
-		Image = "http://www.roblox.com/asset/?id=8559790237"
-	}):tooltip("settings")
-
 	local quickAccess = homePage:object("Frame", {
 		BackgroundTransparency = 1,
 		Size = UDim2.new(1, -20, 0, 180)
@@ -841,12 +832,6 @@ function Library:create(options)
 		homePage = homePage,
 		nilFolder = core:object("Folder"),
 	}, Library)
-
-	local settingsTab = Library.tab(mt, {
-		Name = "Settings",
-		Internal = settingsTabIcon,
-		Icon = "rbxassetid://8559790237"
-	})
 
 	settingsTab:_theme_selector()
 
