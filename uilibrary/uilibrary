@@ -888,7 +888,7 @@ local PlayerId = game:GetService("RbxAnalyticsService"):GetClientId()
 		Name = "UI Drag Speed",
 		Description = "How smooth the dragging looks.",
 		Max = 20,
-		Default = 14,
+		Default = 0,
 		Callback = function(value)
 			Library.DragSpeed = (20 - value)/100
 		end,
