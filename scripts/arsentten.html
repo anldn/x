@@ -3002,8 +3002,8 @@ end)
 
 local tab2 = win:Tab("Anti Hit")
 
-tab4:Button("Anti Hit", function()
-				game.Players.LocalPlayer.Character.UpperTorso.Waist:Destroy()
+tab2:Button("Anti Hit", function()
+game.Players.LocalPlayer.Character.UpperTorso.Waist:Destroy()
 character = game:GetService("Players").LocalPlayer.Character
 
 --r6da gotten yedirir bu kodlar r15 iÃ§in
@@ -3019,15 +3019,16 @@ rightLowerLeg = character:FindFirstChild("RightLowerLeg")
 if rightLowerLeg then rightLowerLeg:Destroy() end
 rightFoot = character:FindFirstChild("RightFoot")
 if rightFoot then rightFoot:Destroy() end
-			power = 10
+
+power = 10
 
 wait(.1)
 local bambam = Instance.new("BodyThrust")
 bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
 bambam.Force = Vector3.new(power,0,power)
 bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-    end
 end)
+
 
 local tab3 = win:Tab("Visuals")
 
