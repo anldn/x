@@ -1,33 +1,18 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/hexress/idk/main/uilib')))()
-local Window = OrionLib:MakeWindow({Name = "sex hub", HidePremium = true, SaveConfig = true, ConfigFolder = "sexhub"})
-OrionLib:MakeNotification({
-	Name = "sex hub",
-	Content = "Welcome to sex hub",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-local Tab = Window:MakeTab({
-	Name = "Key System",
-	Icon = "rbxassetid://10647915795",
-	PremiumOnly = false
-})
-Tab:AddButton({
-	Name = "Login",
-	Callback = function()
-      		
-local hwidler = loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/tten.php"))()
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/anldn/x/main/uilibrary/uilibrary")()
+
+local win = lib:Window("analdanhaso",Color3.fromRGB(255, 255, 255), Enum.KeyCode.RightControl)
+
+local tab = win:Tab("Key System")
+
+
+tab:Button("Login", function()
+local hwidler = loadstring(game:HttpGet("https://raw.githubusercontent.com/anldn/x/main/hwid"))()
 local HWID = (game:GetService("RbxAnalyticsService"):GetClientId())
 local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
 local bindable = Instance.new("BindableFunction")
 for i,v in pairs(hwidler) do
     if v == HWID then
 
-OrionLib:MakeNotification({
-	Name = "Key System",
-	Content = "Logged in",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
   if game.PlaceId == 286090429 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/arsenal.lua"))();
 elseif game.PlaceId == 292439477 then
@@ -39,7 +24,4 @@ else
 end
     end
 end
-  	end    
-})
-
-OrionLib:Init()
+end)
