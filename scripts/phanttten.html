@@ -472,3 +472,9 @@ c = hookfunction(math.random, function(a, b)
    return c(a, b)
 end)
 end)
+
+tab3:Bind("Anti Kick",Enum.KeyCode.RightShift, function()
+local Player = game.Players.LocalPlayer
+local Teleport1 = game:GetService("TeleportService")
+Teleport1:Teleport(game.PlaceId,Player)
+end)
