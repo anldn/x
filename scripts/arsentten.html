@@ -1,29 +1,10 @@
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/hexress/idk/main/uilib', true))() 
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/anldn/x/main/uilibrary/uilibrary")()
 
-local Window = OrionLib:MakeWindow({Name = "Arsenal", HidePremium = false, SaveConfig = true, ConfigFolder = "sexhub"})
+local win = lib:Window("Arsenal",Color3.fromRGB(255, 255, 255), Enum.KeyCode.RightControl)
 
-OrionLib:MakeNotification({
-	Name = "sex hub",
-	Content = "sex hub loaded",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
+local tab = win:Tab("Aimbot")
 
-local Tab = Window:MakeTab({
-	Name = "Aimbot",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "Aimbot"
-})
-
-Tab:AddButton({
-	Name = "Silent Aim",
-	Callback = function()
-					-- made by sex hub
-
+tab:Button("Silent Aim", function()
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local mouse = LocalPlayer:GetMouse()
@@ -97,19 +78,9 @@ else
 target = nil
 end
 end)
-  	end    
-})
+end)
 
-Tab:AddButton({
-	Name = "Aimbot (Hold M2)",
-	Callback = function()
-					-- Issues:
--- I'm still working on Tracers, I know they can cause huge frame rate drops. (I think I got it running as smooth as it's going to get.)
--- Phantom Forces: Weird positioning bug with tracers? Tracer positions a bit behind localplayer. (Maybe make the update faster? > RenderPriority.First ?
-
--- Settings can be found on line: 51
--- Don't change anything if you don't understand.
-
+tab:Button("Silent Aim", function()
 local Plrs = game:GetService("Players")
 local Run = game:GetService("RunService")
 local CoreGui = game:GetService("CoreGui")
@@ -3027,25 +2998,12 @@ end))
 if not succ then
 	error(out)
 end
-  	end    
-})
+end)
 
-local Tab4 = Window:MakeTab({
-	Name = "Anti Hit",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+local tab2 = win:Tab("Anti Hit")
 
-local Section = Tab4:AddSection({
-	Name = "Anti Hit"
-})
-
-Tab4:AddDropdown({
-    Name = "SexYaw [AntiHit]",
-    Default = "1",
-    Options = {"SexYaw Hide real", "SexYaw Peek real"},
-    Callback = function(Value)
-			game.Players.LocalPlayer.Character.UpperTorso.Waist:Destroy()
+tab2:Dropdown("Anti Hit",{"Hide Real","Peek Real","Option 3","Option 4","Option 5"}, function(t)
+				game.Players.LocalPlayer.Character.UpperTorso.Waist:Destroy()
 character = game:GetService("Players").LocalPlayer.Character
 
 --r6da gotten yedirir bu kodlar r15 iÃ§in
@@ -3070,20 +3028,11 @@ bambam.Force = Vector3.new(power,0,power)
 bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
     end
 })
+end)
 
-local Tab2 = Window:MakeTab({
-	Name = "Visuals",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+local tab3 = win:Tab("Visuals")
 
-local Section = Tab2:AddSection({
-	Name = "Visuals"
-})
-
-Tab2:AddButton({
-	Name = "Player ESP (Not Working With KRNL)",
-	Callback = function()
+tab3:Button("Player ESP (Not Working With KRNL)", function()
 				assert(Drawing, "missing function/library: drawing");
 
 -- services
@@ -3195,34 +3144,20 @@ for _, player in next, players:GetPlayers() do
         create_esp(player);
     end
 end
-  	end    
-})
+end)
 
-local Tab3 = Window:MakeTab({
-	Name = "Miscellaneous",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab3:AddSection({
-	Name = "Miscellaneous"
-})
-
-Tab3:AddButton({
-	Name = "Infinite Jump",
-	Callback = function()
+local tab4 = win:Tab("Miscellaneous")
+	
+tab4:Button("Infinite Jump", function()
 			            local InfiniteJumpEnabled = true
 game:GetService("UserInputService").JumpRequest:connect(function()
 	if InfiniteJumpEnabled then
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
 end)
-  	end    
-})
-
-Tab3:AddButton({
-	Name = "Fly (Press X For Toggle)",
-	Callback = function()
+end)
+	
+tab4:Button("Fly (Press X For Toggle)", function()
 					local User = game:GetService("UserInputService")
 local player = game:GetService("Players").LocalPlayer
 local GuiService = game:GetService("StarterGui")
@@ -3383,12 +3318,9 @@ User.InputEnded:Connect(function(inputObject)
        holdingSpaceKey = false SpaceHeld = false
    end
 end)
-  	end    
-})
+end)
 
-Tab3:AddButton({
-	Name = "Noclip",
-	Callback = function()
+tab4:Button("Noclip", function()
 					local runservice = game:GetService("RunService")
 
 local player = game:GetService("Players").LocalPlayer
@@ -3399,18 +3331,13 @@ runservice.Stepped:Connect(function()
         end
     end
 end)
-  	end    
-})
-
-Tab3:AddTextbox({
-	Name = "Spam Message",
-	Default = "s€x hub on top",
-	TextDisappear = true,
-	Callback = function(sexhub)
+end)
+	
+tab4:Textbox("Spam Message",true, function(analdanhaso)
 	while true do
 	local args = {
     [1] = "Haha!",
-    [2] = sexhub,
+    [2] = analdanhaso,
     [3] = false,
     [5] = false,
     [6] = true
@@ -3419,7 +3346,4 @@ Tab3:AddTextbox({
 game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(unpack(args))
 wait(5)
 end
-	end	  
-})
-
-OrionLib:Init()
+end)
