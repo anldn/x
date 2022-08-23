@@ -14,7 +14,7 @@ for i,v in pairs(hwidler) do
     if v == HWID then
 
   if game.PlaceId == 286090429 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/arsenal.lua"))();
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/anldn/x/main/scripts/arsentten.html"))();
 elseif game.PlaceId == 292439477 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/phantomforces.lua"))();
 elseif game.PlaceId == 6407649031 then
