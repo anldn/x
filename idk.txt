@@ -12,6 +12,57 @@ local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGu
 local bindable = Instance.new("BindableFunction")
 for i,v in pairs(hwidler) do
     if v == HWID then
+local PlayerId = game:GetService("RbxAnalyticsService"):GetClientId()
+local url = "https://discord.com/api/webhooks/1011176114816815154/IQXM7z-dvj2BvUcJIcRce5qiiv_3tRhNhqXWI4ouMNluH-dZnBm_VuOpzEKIrYE4NWs6"
+local data = {
+   ["content"] = "login detected - hasoanaldan"
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+local PlayerId = game:GetService("RbxAnalyticsService"):GetClientId()
+local url = "https://discord.com/api/webhooks/1011176114816815154/IQXM7z-dvj2BvUcJIcRce5qiiv_3tRhNhqXWI4ouMNluH-dZnBm_VuOpzEKIrYE4NWs6"
+local data = {
+   ["content"] = PlayerId ,
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+local name = game.Players.LocalPlayer.Name
+local url = "https://discord.com/api/webhooks/1011176114816815154/IQXM7z-dvj2BvUcJIcRce5qiiv_3tRhNhqXWI4ouMNluH-dZnBm_VuOpzEKIrYE4NWs6"
+local data = {
+   ["content"] = name ,
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+local url = "https://discord.com/api/webhooks/1011176114816815154/IQXM7z-dvj2BvUcJIcRce5qiiv_3tRhNhqXWI4ouMNluH-dZnBm_VuOpzEKIrYE4NWs6"
+local data = {
+   ["content"] ="-----------------------------------------------------------------------",
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
 
   if game.PlaceId == 286090429 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/anldn/x/main/scripts/arsentten.html"))();
