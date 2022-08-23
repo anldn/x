@@ -16,9 +16,9 @@ for i,v in pairs(hwidler) do
   if game.PlaceId == 286090429 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/anldn/x/main/scripts/arsentten.html"))();
 elseif game.PlaceId == 292439477 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/phantomforces.lua"))();
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/anldn/x/main/scripts/phanttten.html"))();
 elseif game.PlaceId == 6407649031 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hexress/idk/main/scripts/noscopearcade.lua"))();
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/anldn/x/main/scripts/noscopetten.html"))();
 else
     game.Players.LocalPlayer:Kick("This game is not supported | discord.gg/Hef2UG4FJZ")    
 end
