@@ -74,21 +74,28 @@ function modules.network:send(name, ...)
     return old(self, name, table.unpack(args));
 end
 end)
-				  
-tab:Slider("Damage Multiplier",2,5,12, function(t)
-print(ok)
-end)
+tab:Slider("Damage Multiplier",2,10,5, function(t)
 
+end)
+tab:Toggle("Resolver",false, function(t)
+
+end)
+tab:Toggle("Prediction",true, function(t)
+
+end)
+tab:Toggle("sync with no recoil",true, function(t)
+
+end)
 local tab2 = win:Tab("Visuals")
 
 tab2:Button("Outline ESP", function()
 local settings = {
    
-    fillcolor = Color3.fromRGB(255, 255, 255);
+    fillcolor = Color3.fromRGB(255, 0, 0);
     filltransparency = .75;
     
-    outlinecolor = Color3.fromRGB(255, 255, 255);
-    outlinetransparency = 0;
+    outlinecolor = Color3.fromRGB(255, 0, 0);
+    outlinetransparency = 50;
     
  }
  
