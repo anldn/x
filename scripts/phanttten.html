@@ -1,28 +1,11 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/hexress/idk/main/uilib')))()
+l
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/anldn/x/main/uilibrary/uilibrary")()
 
-local Window = OrionLib:MakeWindow({Name = "Phantom Forces", HidePremium = false, SaveConfig = true, ConfigFolder = "sexhub"})
+local win = lib:Window("No-Scope Arcade",Color3.fromRGB(255, 255, 255), Enum.KeyCode.RightControl)
 
-OrionLib:MakeNotification({
-	Name = "sex hub",
-	Content = "sex hub loaded",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
+local tab = win:Tab("Aimbot")
 
-local Tab = Window:MakeTab({
-	Name = "Aimbot",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "Aimbot"
-})
-
-Tab:AddButton({
-	Name = "Aimbot (Hold M2)",
-	Callback = function()
-			-- instancing
+tab:Button("Aimbot (Hold M2)", function()
 local drawing_new = Drawing.new
 local instance_new = Instance.new
 
@@ -1046,24 +1029,11 @@ getgenv().remove_all_esp = function()
         instance = "Line";
     })
 end
-  	end    
-})
+end)
 
-local Tab2 = Window:MakeTab({
-	Name = "Visuals",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+local tab2 = win:Tab("Visuals")
 
-local Section = Tab2:AddSection({
-	Name = "Visuals"
-})
-
-Tab2:AddButton({
-	Name = "Outline ESP",
-	Callback = function()
-			        -- Settings --
-
+tab2:Button("Outline ESP", function()
 local settings = {
    
     fillcolor = Color3.fromRGB(255, 255, 255);
@@ -1111,25 +1081,11 @@ local settings = {
  workspace.Players.DescendantAdded:Connect(function(v)
     addtoplayer(v)
  end)
-  	end    
-})
+end)
 
-local Tab3 = Window:MakeTab({
-	Name = "Exploit",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+local tab3 = win:Tab("Exploit")
 
-local Section = Tab3:AddSection({
-	Name = "Exploit"
-})
-
-Tab3:AddButton({
-	Name = "Unlock All Weapons",
-	Callback = function()
-			            -- made by siper#9938
-
--- modules
+tab3:Button("Unlock All Weapons", function()
 local network, char, loadgun, loadknife; do
     for _, object in next, getgc(true) do
         if (typeof(object) == "table") then
@@ -1257,12 +1213,9 @@ do
         end
     end
 end
-  	end    
-})
+end)
 
-Tab3:AddButton({
-	Name = "Fly (Press X For Toggle)",
-	Callback = function()
+tab3:Button("Fly (Press X For Toggle)", function()
 			        		local User = game:GetService("UserInputService")
 local player = game:GetService("Players").LocalPlayer
 local GuiService = game:GetService("StarterGui")
@@ -1423,12 +1376,9 @@ User.InputEnded:Connect(function(inputObject)
        holdingSpaceKey = false SpaceHeld = false
    end
 end)
-  	end    
-})
+end)
 
-Tab3:AddButton({
-	Name = "Airjump",
-	Callback = function()
+tab3:Button("Airjump", function()
 			            local Player = game:GetService'Players'.LocalPlayer;
 local UIS = game:GetService'UserInputService';
 
@@ -1447,7 +1397,23 @@ UIS.InputBegan:connect(function(UserInput)
         end)
     end
 end)
-  	end    
-})
+end)
 
-OrionLib:Init()
+tab3:Button("Speedhack", function()
+getgenv().speed = 50
+if ran then return end
+for i,v in pairs(getgc(true)) do if type(v) == 'table' and rawget(v, 'setbasewalkspeed') then char = v end end
+getgenv().ran = true
+game:GetService("RunService").Heartbeat:Connect(function() char:setbasewalkspeed(speed) end)
+end)
+
+tab3:Button("No Recoil", function()
+c = hookfunction(math.random, function(a, b)
+   if a and b then
+       b = a
+   else
+       return 0
+   end
+   return c(a, b)
+end)
+end)
